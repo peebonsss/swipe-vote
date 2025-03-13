@@ -22,6 +22,7 @@
             align-items: center;
             transition: background-color 0.5s ease;
             flex-direction: column;
+            position: relative;
         }
 
         .logo {
@@ -34,11 +35,29 @@
             font-weight: bold;
             color: white;
         }
+
+        .arrow {
+            position: absolute;
+            font-size: 50px;
+            color: white;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .left-arrow {
+            left: 20px;
+        }
+
+        .right-arrow {
+            right: 20px;
+        }
     </style>
 </head>
 <body id="voteBody">
-    <img src="RBDYSlogo.png" alt="Red Bull Dance Your Style" class="logo">
+    <span class="arrow left-arrow">⬅️</span>
+    <img src="image.png" alt="Red Bull Dance Your Style" class="logo">
     <p class="message">Swipe left for Red, right for Blue!</p>
+    <span class="arrow right-arrow">➡️</span>
     <script>
         let voteBody = document.getElementById('voteBody');
         let startX;
