@@ -39,7 +39,7 @@
 </head>
 <body id="voteBody">
     <img src="RBDYSlogo.png" alt="Red Bull Dance Your Style" class="logo">
-    <p class="message">Swipe left for Red, right for Blue!</p>
+    <p class="message">Swipe left for <br> <strong>RED</strong>, right for <br> <strong>BLUE</strong>!</p>
     <script>
         let voteBody = document.getElementById('voteBody');
         let startX;
@@ -53,16 +53,16 @@
             let diff = endX - startX;
 
             if (diff > 50) {
-                changeColor('blue');
+                changeColor('BLUE');
             } else if (diff < -50) {
-                changeColor('red');
+                changeColor('RED');
             }
         });
 
         function changeColor(color) {
-            if (color === 'blue') {
+            if (color === 'BLUE') {
                 voteBody.style.backgroundColor = 'blue';
-            } else if (color === 'red') {
+            } else if (color === 'RED') {
                 voteBody.style.backgroundColor = 'red';
             }
         }
