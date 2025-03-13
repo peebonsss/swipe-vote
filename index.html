@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vote for the Winner</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            background-color: #f4f4f4;
+
+            margin: 0;
+
+            padding: 0;
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            transition: background-color 0.5s ease;
+
+        }
+
+        .message {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            color: white;
+
+        }
+
+    </style>
+
+</head>
+
+<body id="voteBody">
+
+    <p class="message">Swipe left for Red, right for Blue!</p>
+
+
+
+    <script>
+
+        let voteBody = document.getElementById('voteBody');
+
+        let startX;
+
+
+
+        voteBody.addEventListener('touchstart', (e) => {
+
+            startX = e.touches[0].clientX;
+
+        });
+
+
+
+        voteBody.addEventListener('touchend', (e) => {
+
+            let endX = e.changedTouches[0].clientX;
+
+            let diff = endX - startX;
+
+
+
+            if (diff > 50) {
+
+                changeColor('blue');
+
+            } else if (diff < -50) {
+
+                changeColor('red');
+
+            }
+
+        });
+
+
+
+        function changeColor(color) {
+
+            if (color === 'blue') {
+
+                voteBody.style.backgroundColor = 'blue';
+
+            } else if (color === 'red') {
+
+                voteBody.style.backgroundColor = 'red';
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
