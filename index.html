@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vote for the Winner</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'FuturaLTBold';
+            src: url('FuturaLT-Bold.ttf') format('truetype');
+        }
+
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'FuturaLTBold', sans-serif;
             text-align: center;
             background-color: #f4f4f4;
             margin: 0;
@@ -17,16 +21,23 @@
             justify-content: center;
             align-items: center;
             transition: background-color 0.5s ease;
+            flex-direction: column;
+        }
+
+        .logo {
+            width: 200px; /* Adjust size as needed */
+            margin-bottom: 20px;
         }
 
         .message {
             font-size: 24px;
             font-weight: bold;
-            color: black;
+            color: white;
         }
     </style>
 </head>
 <body id="voteBody">
+    <img src="image.png" alt="Red Bull Dance Your Style" class="logo">
     <p class="message">Swipe left for Red, right for Blue!</p>
     <script>
         let voteBody = document.getElementById('voteBody');
